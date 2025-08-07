@@ -1,0 +1,7 @@
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/controller/StudentController.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/client/CourseClient.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/client/CourseRestClientService.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/dto/Rating.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/dto/Course.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/service/StudentService.java
+/home/biswajit/Documents/feign-client-demo/student-service/src/main/java/com/javatechie/StudentServiceApplication.java

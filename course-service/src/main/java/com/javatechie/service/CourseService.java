@@ -3,7 +3,7 @@ package com.javatechie.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javatechie.dto.Course;
 import com.javatechie.dto.Rating;
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +36,7 @@ public class CourseService {
                 .filter(course -> course.getId() == id)
                 .findFirst();
     }
+
 
     public List<Course> getAllCourses() {
         return COURSES;
