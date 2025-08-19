@@ -4,11 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version> <!-- Downgraded for Java 8 -->
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.javatechie</groupId>
+		<artifactId>springboot-microservices-CourseApp</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
+
 
 	<groupId>com.javatechie</groupId>
 	<artifactId>student-service</artifactId>
@@ -58,6 +59,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
     </dependencies>
 
 	<dependencyManagement>

@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "course-client", url = "${application.services.course.url}")
+@FeignClient(name = "COURSE-SERVICE")
 public interface CourseClient {
 
 
-    @GetMapping
+    @GetMapping("/api/courses")
     List<Course> courses();
     //create a proxy for the CourseClient
     //RestTemplate -> build the request
     // URL , GET , NO , List<COURSE>
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/courses/{id}")
     Course course(@PathVariable int id);
 
-    @PostMapping("/{id}/ratings")
+    @PostMapping("/api/courses/{id}/ratings")
     String submitRating(@PathVariable int id, @RequestBody Rating rating);
 
 }
