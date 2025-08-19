@@ -1,22 +1,43 @@
 pipeline {
 	agent any
+
+    tools {
+		maven 'Maven3'   // Make sure you installed Maven under Jenkins -> Global Tool Configuration
+        jdk 'jdk11'      // Or jdk17, depending on your project
+    }
+
     stages {
-		stage('Build') {
+		stage('Checkout') {
 			steps {
-				echo 'Building...'
-                sh './mvnw clean package -DskipTests'   // if Maven wrapper
+				git branch: 'main', url: 'https://github.com/biswajittech99/springboot-microservices-CourseApp.git'
             }
         }
+
+        stage('Build') {
+			steps {
+				sh 'mvn clean package -DskipTests'
+            }
+        }
+
         stage('Test') {
 			steps {
-				echo 'Running tests...'
-                sh './mvnw test'
+				sh 'mvn test'
             }
         }
-        stage('Deploy') {
+
+        stage('Package') {
 			steps {
-				echo 'Deploying...'
+				sh 'mvn package'
             }
+        }
+    }
+
+    post {
+		success {
+			echo 'Build Successful 🚀'
+        }
+        failure {
+			echo 'Build Failed ❌'
         }
     }
 }
