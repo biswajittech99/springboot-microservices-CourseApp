@@ -1,0 +1,24 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: api-gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: course-service
+          uri: lb://COURSE-SERVICE
+          predicates:
+            - Path=/api/courses/**
+        - id: student-service
+          uri: lb://STUDENT-SERVICE
+          predicates:
+            - Path=/api/students/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8086/eureka/
